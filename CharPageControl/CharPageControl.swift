@@ -35,7 +35,7 @@ public class CharPageControl: UILabel {
     @IBInspectable
     public var currentPage: CGFloat = 0.0 {
         didSet{
-            updatePage(max(0.0,min(currentPage,numberOfPages-1)))
+            updatePage(currentPage)
         }
     }
     
@@ -77,7 +77,9 @@ public class CharPageControl: UILabel {
     }
     
     
-    private func updatePage(progress: CGFloat) {
+    private func updatePage(var progress: CGFloat) {
+        
+        progress = max(0.0,min(progress,numberOfPages-1))
         
         if currentAttributedString == nil {
             preparePageControlString()
