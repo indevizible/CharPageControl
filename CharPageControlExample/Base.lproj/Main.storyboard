@@ -20,7 +20,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xhh-li-pIE">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="oyK-xX-DYc">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="oyK-xX-DYc">
                                     <size key="itemSize" width="600" height="600"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -59,11 +59,11 @@
                                     <outlet property="delegate" destination="jyO-Z7-Wmj" id="xrS-wo-Ej2"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmR-SD-244" customClass="CharPageControl" customModule="CharPageControl">
-                                <rect key="frame" x="186" y="505" width="228" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmR-SD-244" customClass="CharPageControl" customModule="CharPageControl">
+                                <rect key="frame" x="290" y="389" width="25" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="228" id="OpL-Qo-dq1"/>
-                                    <constraint firstAttribute="height" constant="34" id="URx-OY-d6O"/>
+                                    <constraint firstAttribute="width" constant="25" id="OpL-Qo-dq1"/>
+                                    <constraint firstAttribute="height" constant="150" id="URx-OY-d6O"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -91,7 +91,7 @@
                             <constraint firstItem="6Id-Fc-z1l" firstAttribute="top" secondItem="jmR-SD-244" secondAttribute="bottom" constant="61" id="eDL-Mn-weW"/>
                             <constraint firstItem="Xhh-li-pIE" firstAttribute="leading" secondItem="yLT-l2-7Wj" secondAttribute="leading" id="nrz-KW-WXt"/>
                             <constraint firstAttribute="trailing" secondItem="Xhh-li-pIE" secondAttribute="trailing" id="tIu-Zb-yoS"/>
-                            <constraint firstItem="jmR-SD-244" firstAttribute="centerX" secondItem="yLT-l2-7Wj" secondAttribute="centerX" id="vO2-AB-IYg"/>
+                            <constraint firstItem="jmR-SD-244" firstAttribute="centerX" secondItem="yLT-l2-7Wj" secondAttribute="centerX" constant="2.5" id="vO2-AB-IYg"/>
                         </constraints>
                     </view>
                     <connections>

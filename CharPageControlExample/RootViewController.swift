@@ -49,7 +49,7 @@ extension RootViewController: UICollectionViewDataSource {
 
 extension RootViewController: UICollectionViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let currentPage = (CGFloat(pageCount) * scrollView.contentOffset.x)/scrollView.contentSize.width
+        let currentPage = (CGFloat(pageCount) * scrollView.contentOffset.y)/scrollView.contentSize.height
         pageControl.currentPage = currentPage
     }
 }
