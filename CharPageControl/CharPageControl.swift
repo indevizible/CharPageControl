@@ -67,6 +67,37 @@ public class CharPageControl: UILabel {
         }
     }
     
+    @IBInspectable
+    public var lineSpace: CGFloat = 1.0 {
+        didSet {
+            updatePage(currentPage)
+        }
+    }
+    
+    @IBInspectable
+    public var minimumLineHeight: CGFloat = 1.0 {
+        didSet {
+            updatePage(currentPage)
+        }
+    }
+    
+    @IBInspectable
+    public var lineHeightMultiple: CGFloat = 1.0 {
+        didSet {
+            updatePage(currentPage)
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        numberOfLines = 0
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        numberOfLines = 0
+    }
+    
     private func preparePageControlString () {
         var string = String()
         for i in 0..<Int(numberOfPages) {
@@ -110,7 +141,10 @@ public class CharPageControl: UILabel {
     private func attributeForProgress(progress: CGFloat) -> [String:AnyObject] {
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment =  textAlignment
-    
+        paragraph.lineSpacing = lineSpace
+        paragraph.minimumLineHeight = minimumLineHeight
+        paragraph.lineHeightMultiple = lineHeightMultiple
+        
         return [NSFontAttributeName:font,
             NSForegroundColorAttributeName:currentColor.colorByInterpolatingToColor(defaultColor, progress: progress),
             NSKernAttributeName:space,
