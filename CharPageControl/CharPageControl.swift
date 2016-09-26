@@ -28,14 +28,14 @@ public class CharPageControl: UILabel {
                 pattern = ""
             }
             preparePageControlString()
-            updatePage(currentPage)
+            updatePage(progress: currentPage)
         }
     }
     
     @IBInspectable
     public var currentPage: CGFloat = 0.0 {
         didSet{
-            updatePage(currentPage)
+            updatePage(progress: currentPage)
         }
     }
     
@@ -49,42 +49,42 @@ public class CharPageControl: UILabel {
     @IBInspectable
     public var defaultColor: UIColor = UIColor(white: 0.85, alpha: 1) {
         didSet {
-            updatePage(currentPage)
+            updatePage(progress: currentPage)
         }
     }
     
     @IBInspectable
-    public var currentColor: UIColor = UIColor.blackColor() {
+    public var currentColor: UIColor = UIColor.black {
         didSet {
-            updatePage(currentPage)
+            updatePage(progress: currentPage)
         }
     }
     
     @IBInspectable
     public var space: CGFloat = 1.5 {
         didSet {
-            updatePage(currentPage)
+            updatePage(progress: currentPage)
         }
     }
     
     @IBInspectable
     public var lineSpace: CGFloat = 1.0 {
         didSet {
-            updatePage(currentPage)
+            updatePage(progress: currentPage)
         }
     }
     
     @IBInspectable
     public var minimumLineHeight: CGFloat = 1.0 {
         didSet {
-            updatePage(currentPage)
+            updatePage(progress: currentPage)
         }
     }
     
     @IBInspectable
     public var lineHeightMultiple: CGFloat = 1.0 {
         didSet {
-            updatePage(currentPage)
+            updatePage(progress: currentPage)
         }
     }
     
@@ -108,8 +108,9 @@ public class CharPageControl: UILabel {
     }
     
     
-    private func updatePage(var progress: CGFloat) {
+    private func updatePage( progress: CGFloat) {
         
+        var progress = progress
         progress = max(0.0,min(progress,numberOfPages-1))
         
         if currentAttributedString == nil {
@@ -120,8 +121,8 @@ public class CharPageControl: UILabel {
         
         if let currentAttributedString = currentAttributedString {
             
-            currentAttributedString.setAttributes(attributeForProgress(progress - floor(progress)), range: NSMakeRange(Int(floor(progress)), 1))
-            currentAttributedString.setAttributes(attributeForProgress(ceil(progress) - progress), range: NSMakeRange(Int(ceil(progress)), 1))
+            currentAttributedString.setAttributes(attributeForProgress(progress: progress - floor(progress)), range: NSMakeRange(Int(floor(progress)), 1))
+            currentAttributedString.setAttributes(attributeForProgress(progress: ceil(progress) - progress), range: NSMakeRange(Int(ceil(progress)), 1))
             
             attributedText = currentAttributedString
         }
@@ -133,7 +134,7 @@ public class CharPageControl: UILabel {
     
     private func resetAttributes(){
         if let currentAttributedString = currentAttributedString {
-            currentAttributedString.setAttributes(attributeForProgress(1),
+            currentAttributedString.setAttributes(attributeForProgress(progress: 1),
                 range: NSMakeRange(0, currentAttributedString.length))
         }
     }
@@ -146,22 +147,22 @@ public class CharPageControl: UILabel {
         paragraph.lineHeightMultiple = lineHeightMultiple
         
         return [NSFontAttributeName:font,
-            NSForegroundColorAttributeName:currentColor.colorByInterpolatingToColor(defaultColor, progress: progress),
-            NSKernAttributeName:space,
+            NSForegroundColorAttributeName:currentColor.colorByInterpolatingToColor(color: defaultColor, progress: progress),
+            NSKernAttributeName:space as AnyObject,
             NSParagraphStyleAttributeName:paragraph]
     }
     
-    override public func drawRect(rect: CGRect) {
-        super.drawRect(rect)
-        updatePage(currentPage)
+    override public func draw(_ rect: CGRect) {
+        super.draw(rect)
+        updatePage(progress: currentPage)
     }
     
     public override func layoutSubviews() {
-        updatePage(currentPage)
+        updatePage(progress: currentPage)
     }
     
     override public func prepareForInterfaceBuilder() {
-        updatePage(currentPage)
+        updatePage(progress: currentPage)
     }
     
 }
@@ -188,6 +189,6 @@ extension UIColor {
 
 extension String {
     subscript (i: Int) -> Character {
-        return self[self.startIndex.advancedBy(i)]
+        return characters.map({$0})[i]
     }
 }
