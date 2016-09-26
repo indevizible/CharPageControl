@@ -11,7 +11,6 @@
 		9032B2AC1C6B500400C6C78E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9032B2A41C6B500400C6C78E /* Assets.xcassets */; };
 		9032B2AD1C6B500400C6C78E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9032B2A51C6B500400C6C78E /* LaunchScreen.storyboard */; };
 		9032B2AE1C6B500400C6C78E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9032B2A71C6B500400C6C78E /* Main.storyboard */; };
-		9032B2AF1C6B500400C6C78E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9032B2A91C6B500400C6C78E /* Info.plist */; };
 		9032B2B01C6B500400C6C78E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9032B2AA1C6B500400C6C78E /* RootViewController.swift */; };
 		9032B2B91C6B50C500C6C78E /* CharPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9032B2B81C6B50C500C6C78E /* CharPageControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9032B2BD1C6B50C500C6C78E /* CharPageControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9032B2B61C6B50C500C6C78E /* CharPageControl.framework */; };
@@ -175,14 +174,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Nattawut Singhchai";
 				TargetAttributes = {
 					901537BE1C6B4AB300701AAB = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = D677KHSUK6;
+						LastSwiftMigration = 0800;
 					};
 					9032B2B51C6B50C500C6C78E = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -210,7 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9032B2AF1C6B500400C6C78E /* Info.plist in Resources */,
 				9032B2AE1C6B500400C6C78E /* Main.storyboard in Resources */,
 				9032B2AC1C6B500400C6C78E /* Assets.xcassets in Resources */,
 				9032B2AD1C6B500400C6C78E /* LaunchScreen.storyboard in Resources */,
@@ -287,8 +288,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -332,8 +335,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -352,6 +357,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -360,24 +366,28 @@
 		901537D61C6B4AB300701AAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				DEVELOPMENT_TEAM = D677KHSUK6;
 				INFOPLIST_FILE = CharPageControlExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = indevizible.CharPageControllExample;
 				PRODUCT_NAME = CharPageControlExample;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		901537D71C6B4AB300701AAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				DEVELOPMENT_TEAM = D677KHSUK6;
 				INFOPLIST_FILE = CharPageControlExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = indevizible.CharPageControllExample;
 				PRODUCT_NAME = CharPageControlExample;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -385,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -397,6 +408,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -406,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -417,6 +430,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = indevizible.CharPageControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -450,6 +464,7 @@
 				9032B2C11C6B50C500C6C78E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

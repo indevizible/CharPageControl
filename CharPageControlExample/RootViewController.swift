@@ -32,30 +32,30 @@ class RootViewController: UIViewController {
 
 extension RootViewController: UICollectionViewDataSource {
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as? ExampleCell{
-            cell.pageLabel.text = "PAGE \(indexPath.item.advancedBy(1))"
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as? ExampleCell{
+            cell.pageLabel.text = "PAGE \(indexPath.item + (1))"
             cell.pageLabel.backgroundColor = UIColor(hue: (1.0 / CGFloat(pageCount)) * CGFloat(indexPath.item), saturation: 0.1, brightness: 1.0, alpha: 1)
             return cell
         }
         return ExampleCell()
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pageCount
     }
 }
 
 extension RootViewController: UICollectionViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentPage = (CGFloat(pageCount) * scrollView.contentOffset.x)/scrollView.contentSize.width
         pageControl.currentPage = currentPage
     }
 }
 
 extension RootViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.frame.size
     }
 }
