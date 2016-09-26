@@ -28,7 +28,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="NCl-zj-Gny" customClass="ExampleCell" customModule="CharPageControlExample" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="34" width="375" height="600"/>
+                                        <rect key="frame" x="0.0" y="33.5" width="375" height="600"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>

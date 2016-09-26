@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name					= "CharPageControl"
-s.version				= "1.0.1"
+s.version				= "2.0"
 s.summary				= "CharPageControl is a GLYPH style for pagination written in swift."
 s.homepage				= "https://github.com/indevizible/CharPageControl"
 s.license				= { :type => "Apache 2.0", :file => 'LICENSE' }

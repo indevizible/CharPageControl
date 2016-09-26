@@ -16,12 +16,13 @@ CharPageControl is a **GLYPH** style for pagination written in swift.
 
 ![inspecable](/imgs/01.png)
 
-- [x] IBDesignable support
+- [ ] IBDesignable support (Error on swift 3)
 
 ![inspecable](/imgs/02.png)
 
 ## Requirements
 - Swift 2+
+- Swift 3
 - iOS 8.0+
 
 ##  Installation
@@ -46,7 +47,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'CharPageControl', '~> 1.0'
+pod 'CharPageControl', '~> 2.0'
 ```
 
 Then, run the following command:
@@ -69,7 +70,7 @@ $ brew install carthage
 To integrate CharPageControl into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "indevizible/CharPageControl" ~> 1.0
+github "indevizible/CharPageControl" ~> 2.0
 ```
 
 Run `carthage update` to build the framework and drag the built `CharPageControl.framework` into your Xcode project.
